@@ -17,6 +17,7 @@ for each_tag in res:
 	eachurl=(each_tag.prettify().__str__().split('\n')[0].split('"')[3])
 	print(eachurl)
 	eachpage=requests.get(eachurl)
+	print(eachpage)
 	# print(eachpage.text[:10],eachpage)
 	# print("abrakadabra")
 	gg=eachpage.text.find("dealType")
