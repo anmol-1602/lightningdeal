@@ -11,13 +11,15 @@ soup=bs(page.text,"html.parser")
 res=soup.findAll("a",{"class":"s-access-detail-page"})
 print("List of all the earphones under the catagory of lightning deals:\n")
 count=0
-
+i=1
 
 for each_tag in res:
 	eachurl=(each_tag.prettify().__str__().split('\n')[0].split('"')[3])
+	print str(i),'.',each_tag.text
+	i+=1
 	print(eachurl)
 	eachpage=requests.get(eachurl)
-	print(eachpage)
+	#print(eachpage)
 	# print(eachpage.text[:10],eachpage)
 	# print("abrakadabra")
 	gg=eachpage.text.find("dealType")
@@ -35,5 +37,3 @@ for each_tag in res:
 		# 	break
 
 # print(count)
-
-	
